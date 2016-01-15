@@ -1,0 +1,111 @@
+
+
+# Specify output dimensions.
+Dimensions 1000 500
+
+# Same as gluPerspective
+Perspective 30.0 2.0 1.0 20 1.0
+
+# Same as gluLookAt
+LookAt  8.2434  4.2533  9.8429 # eye position
+       -0.1243 -0.1253 -0.9843 # focus position
+       -0.0157  0.9921 -0.1243 # up vector
+
+# Blue icelike material.
+Material "ice"
+    "ambient"   [0.1 0.3 0.3]
+    "diffuse"   [0.0 0.1 0.1]
+    "specular"  [0.5 0.5 0.5]
+    "emission"  [0.0 0.0 0.0]
+    "shininess" 15.0
+    "shadow"    0.3
+    "reflect"   0
+    "refract"   1.0
+    "rfrIndex"  1.6
+    
+# Green gemlike material
+Material "emerald"
+    "ambient"   [0.1 0.3 0.1]
+    "diffuse"   [0.0 0.1 0.0]
+    "specular"  [0.5 0.5 0.5]
+    "emission"  [0.0 0.0 0.0]
+    "shininess" 15.0
+    "shadow"    0.3
+    "reflect"   0
+    "refract"   1.0
+    "rfrIndex"  1.6
+    
+# glassy ball
+Material "glass"
+    "ambient"   [0.3 0.4 0.4]
+    "diffuse"   [0.3 0.3 0.3]
+    "specular"  [1.0 1.0 1.0]
+    "emission"  [0.0 0.0 0.0]
+    "shininess" 30.0
+    "shadow"    0.0
+    "reflect"   0.5
+    "refract"   0.5
+    "rfrIndex"  1.33
+
+# White material.
+Material "white"
+    "ambient"   [0.1 0.1 0.1]
+    "diffuse"   [2.0 2.0 2.0]
+    "specular"  [0 0 0]
+    "emission"  [0 0 0]
+    "shininess" 0.0
+    "shadow"    0.8
+    "reflect"   0.0
+
+
+###############################################################################
+## objects
+##
+## Cube mesh
+
+PushMatrix
+    Translate 2.15 0.10 0.75
+    Sphere 1.10 "glass"
+PopMatrix
+
+PushMatrix
+    Scale 2 2 2
+    Translate -0.5 -0.5 0.0
+    Mesh "ice" "meshes/cube.obj"
+PopMatrix
+
+PushMatrix
+    Translate -1.0 0.5 0.20
+    Scale 0.4 0.4 0.4
+    Rotate 90 0 1 0
+    Mesh "emerald" "meshes/icosahedron.obj"
+PopMatrix
+
+# Floor
+PushMatrix
+    Translate 0 -1.25 0
+    Rotate -90 1 0 0
+    Plane "white"
+PopMatrix
+
+
+############################################################################### 
+## define lights
+##
+## define a point light source
+
+#PointLight      2.0 10.0 3.0    # position [x y z]
+PointLight      0.0 0.0 10.0
+    "ambient"  [0.1 0.1 0.1]    # ambient color [r g b]
+    "diffuse"  [10.0 10.0 10.0] # diffuse color 
+    "specular" [20.0 20.0 20.0] # specular color
+    "attenuation"  [1.8 3.0 0.0]    # attenuation [constant linear square]
+
+# define another light source
+PointLight 2.0 5.0 -2.0         # position [x y z]
+    "ambient"  [0.1 0.1 0.1]    # ambient color [r g b]
+    "diffuse"  [5.0 5.0 5.0]    # diffuse color 
+    "specular" [20.0 20.0 20.0] # specular color
+    "attenuation"  [1.8 3.0 0.0]    # attenuation [constant linear square]
+
+
