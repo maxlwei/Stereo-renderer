@@ -20,7 +20,7 @@ argument:
 
 
 
-File Description (REALLY HELPFUL)
+File Description
 =================================
 
 The "main.cpp" is the entry of the program, it uses Parser (defined in "parser.hpp" and "parser.cpp")
@@ -31,12 +31,6 @@ the scene on an Image object and output the image as a bmp file (which is suppor
 
 The scene object may contain several Gemeotric Objects (defined in "object.hpp" and "object.cpp"). The
 basic math toolkit such as Vector, Matrix, Ray, and Intersection are defined in "basic.hpp".
-
-Basically, your job is to write code in "object.cpp" and "raytracer.cpp". You are recommended to have a
-quick look at "basic.hpp", "object.hpp", "raytracer.hpp", and "scene.hpp" to get a good knowledge of the
-C++ classes, which will help with your coding. The rest of the files: "image.hpp", "parser.cpp", and 
-"parser.hpp" are less important than the above.
-
 
 
 Scene Format
