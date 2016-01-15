@@ -9,7 +9,8 @@ Using 0.0 for the value will create a normal single-image render.
 
 NOTE that the aspect ratio is for the entire final file, and not for the half images for each eye.
 
-
 History
+
 Authored by Max Wei and Mikhail Bessmeltsev
+
 Originally a CPSC 314 final assignment, I added Refraction support and then Stereoscopic 3D support.
